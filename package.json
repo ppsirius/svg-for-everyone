@@ -1,5 +1,6 @@
 {
   "author": "piotrek@jakbyco.com",
+  "license": "MIT",
   "scripts": {
     "start": "mdx-deck deck.mdx",
     "build": "mdx-deck build deck.mdx",
