@@ -1,5 +1,6 @@
 import { future, highlight } from 'mdx-deck/themes'
 import { Notes } from 'mdx-deck'
+import { Image } from 'mdx-deck'
 
 export const themes = [
   future,
@@ -7,7 +8,7 @@ export const themes = [
 ]
 
 
-# SVG for everyone
+## SVG for everyone
 
 ---
 
@@ -37,3 +38,213 @@ import CenterLayout from './centerLayout'
 <Notes>
 Only visible in presenter mode
 </Notes>
+
+---
+
+import basicShape from './img/basic_shapes.png'
+
+## Basic Shapes
+
+<Image src={basicShape} style={{ width: "70%", height: "60%", backgroundSize: "contain"}} />
+
+---
+
+## ELLIPSES AND CIRCLES
+
+<CenterLayout>
+
+```jsx
+  <ellipse cx="400" cy="300" rx="250" ry="150"/>
+```
+</CenterLayout>
+
+<Image
+  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/33ecc52f-f367-4aea-ae7e-bc2add97f7a0/ellipse.png"
+  style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
+/>
+
+
+---
+
+## ELLIPSES AND CIRCLES
+
+```jsx
+  <circle cx="400" cy="300" r="250"/>
+```
+
+<Image
+  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/7d625ec0-fb0f-44a4-a3c6-e46d75d34f48/circle.png"
+  style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
+/>
+
+---
+
+## RECTANGLES AND ROUNDED RECTANGLES
+
+```jsx
+  <rect x="150" y="100" width="500" height="400"/>
+```
+
+<Image
+  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/e1ab700c-646c-46f9-88cf-cc324f9bac91/rectangle.png"
+  style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
+/>
+
+---
+
+```jsx
+  <rect x="150" y="100" width="500" height="400" rx="30"/>
+```
+
+<Image
+  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/56ce6b49-c90c-45a3-be0b-cfa8bc2e64b5/rounded-rectangle.png"
+  style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
+/>
+
+---
+
+## Elliptical Corners
+
+```jsx
+  <rect x="150" y="100" width="500" height="400" rx="40" ry="30"/>
+```
+
+<Image
+  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/eb7fb547-6aa3-41e5-9d59-e4314927cccd/elliptical-corner.png"
+  style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
+/>
+
+---
+
+## Rounded Rectangles
+
+<CenterLayout>
+In design tools, the same as in CSS, each of the corners of a rectangle can be controlled separately such operation is not possible on a rect element in SVG.
+
+If you create a rectangle with multiple radii applied to its corners, the design tool will generate a path.
+</CenterLayout>
+
+---
+
+## Lines
+
+```jsx
+ <line x1="100" y1="100" x2="200" y2="200"/>
+```
+
+<Image
+  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/c1a20727-8124-42c1-afba-f88c46b65d50/line.png"
+  style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
+/>
+
+---
+
+## Exporting lines
+
+<CenterLayout>
+  When it comes to exporting, Illustrator and Figma will export lines as line elements where possible, while Sketch will always compute lines to path elements.
+</CenterLayout>
+
+---
+
+## Polylines
+
+<CenterLayout>
+  Polyline is a connected series of straight lines.
+
+  Polylines don’t have dedicated tools in the design tools.
+
+  They can be drawn with a Pen tool (in Illustrator and Figma) or with a Vector tool (in Sketch).
+
+  Illustrator and Sketch translate polylines to polyline elements, whilst Figma exports polylines as paths.
+</CenterLayout>
+
+---
+
+```jsx
+ <polyline points="10,20 10,20 30,10 40,20" />
+```
+
+<Image
+  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/cee72efa-5e41-4d84-a660-bc101b080472/polyline.png"
+  style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
+/>
+
+---
+
+## POLYGONS
+
+<CenterLayout>
+  The syntax of a polygon element in SVG is actually the same as of a polyline.
+
+  The only difference between the two is that in the polygon the last point on the list is always being connected with the first point to make a polygon a closed shape.
+</CenterLayout>
+
+---
+
+<Image
+  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/62f2b220-4640-4c35-98be-42ccd9ea0c15/polygon.png"
+  style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
+/>
+
+---
+
+<CenterLayout>
+  In SVG, stars are just polygons, there is NO star element.
+
+  It’s important to remember that Star and Polygon tools are used to create regular stars and polygons, while the polygon element in SVG can be used for any polygon, regular or irregular.
+</CenterLayout>
+
+---
+
+## PATHS
+
+<CenterLayout>
+  In fact, every basic shape can be described as a path element.
+</CenterLayout>
+
+```jsx
+<path d="M 10,30
+        A 20,20 0,0,1 50,30
+        A 20,20 0,0,1 90,30
+        Q 90,60 50,90
+        Q 10,60 10,30 z"/>
+```
+
+---
+
+## Why difference shapes matter
+
+<CenterLayout>
+  Don’t create rectangles with lines or circles with rectangles if you don’t have a good reason.
+</CenterLayout>
+
+* Semantics/Readability
+
+* File Size
+
+* Animations
+
+* Variants/Responsiveness
+
+<Notes>
+Semantics/Readability
+Compression tools, such as SVGO, give you an option to compute all the basic shapes to path elements. It can save you a few bites but will definitely lower the readability of your code. <path /> syntax is extremely unintuitive, so if your SVG is ever about to be modified in a code editor rather than a design tool, it will be so much easier to understand it if you keep the basic shapes as basic shapes.
+
+File Size
+Compressing shapes to paths may help you minify files but it’s not always the case! For example, a rounded rectangle takes much more space as a <path /> than as a <rect />.
+
+Animations
+Have you ever tried to animate SVG? It’s a lot of fun — as long as you operate on clean, semantic SVG. With basic shapes, you can easily manipulate such parameters as radius, width, height or position of the point. If you merge your shapes into paths, most of those operations will be much harder to achieve or simply impossible.
+
+Variants/Responsiveness
+Remember that SVG is not a static image such as JPG. You can style it, theme it, make it responsive, and so on. Same as with animations, keeping your file well-structured and semantic will definitely help you with any of those tasks.
+</Notes>
+
+---
+
+Source:
+
+[Smashing Magazine](https://www.smashingmagazine.com/2019/05/svg-design-tools-practical-guide/)
+
+[MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path)
