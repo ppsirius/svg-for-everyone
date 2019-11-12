@@ -10,6 +10,13 @@ export const themes = [
 
 ## SVG for everyone
 
+
+<Image
+  src="https://media.giphy.com/media/EOpZ7XsVfTN2E/giphy.gif"
+  style={{ width: "43%", height: "50%", backgroundSize: "contain"}}
+/>
+
+
 ---
 
 * Design Tools vs Code
@@ -240,6 +247,185 @@ Have you ever tried to animate SVG? It’s a lot of fun — as long as you opera
 Variants/Responsiveness
 Remember that SVG is not a static image such as JPG. You can style it, theme it, make it responsive, and so on. Same as with animations, keeping your file well-structured and semantic will definitely help you with any of those tasks.
 </Notes>
+
+---
+
+
+## viewBox
+
+<CenterLayout>
+   You can think of a viewBox as of a virtual canvas in the form of a coordinate system.
+
+   The centre of this coordinate system is placed in the top left corner of the designated area.
+
+   ViewBox doesn’t determine SVG’s size. It just specifies the coordinates of the area in which our SVG is drawn.
+</CenterLayout>
+
+---
+
+## width/height vs viewBox
+
+<CenterLayout>
+  Width and height are the svg attributes that set the actual width and height of the SVG element.
+
+  On the contrary to viewBox, they should use specified units such as pixels, ems or rems.
+</CenterLayout>
+
+<Image
+  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/2044e846-84b3-4f72-a1a5-55e788daeada/viewbox-width-height.png"
+  style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
+/>
+
+
+---
+
+## viewBox in export
+
+<CenterLayout>
+  In Sketch and Figma, all assets will always get a viewBox equal to the dimensions of the exported element and width and height set in pixels, equal to the last two values of the viewBox.
+
+  In Illustrator, all assets have a viewBox, specified the same way as in Sketch and Figma, but no width and height applied.
+</CenterLayout>
+
+---
+
+
+## Groups
+
+<CenterLayout>
+   Apart from setting hierarchy, groups are used to apply bulk operations, such as transforms, to multiple elements.
+
+   There’s no significant difference in how groups work across Illustrator, Sketch and Figma and, fortunately, the basic functionality of SVG groups is pretty much the same.
+</CenterLayout>
+
+---
+
+## COLOR FILL
+
+<CenterLayout>
+  Color fill is the most basic of available fills and is specified with a single plain color (e.g. #3fd8e2). In SVG, this value is put directly in the fill attribute (e.g. fill="#3fd8e2").
+
+  Design tools export color fills with hex values (e.g. #0000ff), although, in SVG, you can also use all the other naming schemes known to CSS, such as color names (e.g. blue), RGB values (e.g. rgb(0,0,255)) or even HSL values (e.g. hsl(240,100%,50%)).
+</CenterLayout>
+
+---
+
+## STROKES
+
+<CenterLayout>
+  Stroke attribute in SVG, same as fill attribute accepts colors in various formats, e.g. hex, RGB or HSL.
+
+  And similarly to fill, you can control stroke’s opacity with stroke-opacity. Also, same as with fill, strokes can use gradients as their value.
+
+</CenterLayout>
+
+  ```jsx
+   <line stroke="black" stroke-dasharray="0 2" stroke-linecap="round"/>
+  ```
+
+---
+
+## TEXT
+
+<CenterLayout>
+  Luckily for us, SVG plays very nicely with CSS, which means we can use web fonts instead of SVG fonts:
+</CenterLayout>
+
+  ```jsx
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Roboto");
+    </style>
+
+    <text x="20" y="50" font-family="Roboto">Text</text>
+
+  ```
+
+---
+
+## Transforms
+
+<CenterLayout>
+  In SVG, there are five basic transforms that we can apply to an element:
+
+  * translate
+
+  * scale
+
+  * rotate
+
+  * skew (skewX or skewY)
+
+  * matrix
+
+</CenterLayout>
+
+---
+
+## Transforms tip
+
+<CenterLayout>
+  Notice that even though some of the SVG transforms look very similar to CSS transforms, they are not the same.
+
+  For example, CSS offers both 2D and 3D rotation functions while SVG has only one 2D rotate function.
+
+</CenterLayout>
+
+---
+
+<CenterLayout>
+  Also, while CSS accepts various angle units such as degrees or radians, SVG rotations are always set in degrees, therefore a unit can be omitted (e.g. rotate(45), NOT ~~rotate(45deg)~~)
+</CenterLayout>
+
+  ```jsx
+    <g transform="scale(3) rotate(90) translate(50,100)"> … </g>
+  ```
+---
+
+
+## Others elements
+
+<CenterLayout>
+
+  * GRADIENT FILL
+
+  * PATTERN/IMAGE FILL
+
+  * BLEND MODES
+
+  * SYMBOLS AND COMPONENTS
+
+  * SHADOWS, FILTERS, OTHER EFFECT
+
+</CenterLayout>
+
+---
+
+## Exercises time
+
+<Image style={{ width: "60%", height: "60%", backgroundSize: "contain"}} src="http://giphygifs.s3.amazonaws.com/media/5EJHDSPpFhbG0/giphy.gif" />
+
+<a href="https://codepen.io/ppsirius/pen/eYYLNaR" target="_blank">Link to exercise</a>
+
+---
+
+## SVG use cases
+
+<CenterLayout>
+  <a href="https://waaark.com/" target="_blank">Waaark</a><br/><br/>
+  <a href="https://www.supremo.co.uk/typeterms/" target="_blank">Typeterms</a><br/><br/>
+  <a href="https://cuberto.com/" target="_blank">Cuberto</a>
+</CenterLayout>
+
+---
+
+## ANIMATED WEATHER ICONS
+
+<CenterLayout>
+  <a href="https://codepen.io/joshbader/pen/EjXgqr" target="_blank">Codepen</a><br/><br/>
+  <a href="https://github.com/atiyahaider/Animated-SVG-Weather-Icons" target="_blank">Github</a><br/><br/>
+  <a href="https://codepen.io/boosmoke/pen/XegXaW" target="_blank">Codepen</a><br/><br/>
+
+</CenterLayout>
 
 ---
 
