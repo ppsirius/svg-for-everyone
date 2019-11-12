@@ -21,6 +21,10 @@ export const themes = [
 
 ## What is SVG?
 
+<Notes>
+  Sprawdzić wiedze uczestników o formacie.
+</Notes>
+
 ---
 
 import CenterLayout from './centerLayout'
@@ -35,7 +39,9 @@ import CenterLayout from './centerLayout'
 
 
 <Notes>
-Only visible in presenter mode
+  Dokument oparty o strukture XML-a. W przeciwieństiwe do JPG-a czy PNG-a można go stworzyć bez użycia narzędzia graficznego.
+
+  Jednak wiadomo iż bardziej skomplikowa elementy z oczywistych względów lepiej tworzyć lub edytować w programie.
 </Notes>
 
 ---
@@ -45,6 +51,12 @@ import basicShape from './img/basic_shapes.png'
 ## Basic Shapes
 
 <Image src={basicShape} style={{ width: "70%", height: "60%", backgroundSize: "contain"}} />
+
+<Notes>
+  Mimo różnic w nazewnictwie w niektórych progragmach i tak ostatecznie eksport odbywa sie do poprawnego pliku SVG.
+
+  Chociaż w zależności od programu struktura kodu może wygladać inaczej w niektórych przypadkach.
+</Notes>
 
 ---
 
@@ -123,6 +135,12 @@ In design tools, the same as in CSS, each of the corners of a rectangle can be c
 If you create a rectangle with multiple radii applied to its corners, the design tool will generate a path.
 </CenterLayout>
 
+<Notes>
+  Mimo możliwości zmiany poszczególnych rogów kwadratu w programach graficznych w pliku svg jest to niemożliwe.
+
+  Sprowadza się to do tego że jest generowana ścieżka zamiast rect z zaokrągleniami.
+</Notes>
+
 ---
 
 ## Lines
@@ -144,6 +162,11 @@ If you create a rectangle with multiple radii applied to its corners, the design
   When it comes to exporting, Illustrator and Figma will export lines as line elements where possible, while Sketch will always compute lines to path elements.
 </CenterLayout>
 
+
+<Notes>
+  Tutaj ciekawy przypadek w Sketchu gdzie zawsze zamienia linie na ścieżke przy eksporcie
+</Notes>
+
 ---
 
 ## Polylines
@@ -157,6 +180,11 @@ If you create a rectangle with multiple radii applied to its corners, the design
 
   Illustrator and Sketch translate polylines to polyline elements, whilst Figma exports polylines as paths.
 </CenterLayout>
+
+<Notes>
+  Polilajny to połączona seria prostych lini, która nie ma swojego dedykowanego toola.
+  Jak widać występuwją też pewne różniece przy eksporcie.
+</Notes>
 
 ---
 
@@ -179,6 +207,11 @@ If you create a rectangle with multiple radii applied to its corners, the design
   The only difference between the two is that in the polygon the last point on the list is always being connected with the first point to make a polygon a closed shape.
 </CenterLayout>
 
+<Notes>
+  Poligon to bardzo podobny element do polilajnów z taką różnicą że w poligonie ostatni element zawsze jest połączony z pierwszym.
+</Notes>
+
+
 ---
 
 <Image
@@ -193,6 +226,10 @@ If you create a rectangle with multiple radii applied to its corners, the design
 
   It’s important to remember that Star and Polygon tools are used to create regular stars and polygons, while the polygon element in SVG can be used for any polygon, regular or irregular.
 </CenterLayout>
+
+<Notes>
+  Istnieje co prawda narzędzie star, jednak w pliku svg on nie wystepuje. Star jest zamieniany przy eksporcie na polygon.
+</Notes>
 
 ---
 
@@ -209,6 +246,10 @@ If you create a rectangle with multiple radii applied to its corners, the design
         Q 90,60 50,90
         Q 10,60 10,30 z"/>
 ```
+
+<Notes>
+  Najważniejszy chyba element, ścieżką jestesteśmy w stanie opisać prawie każdy inny kształt występujący w svg.
+</Notes>
 
 ---
 
@@ -228,16 +269,21 @@ If you create a rectangle with multiple radii applied to its corners, the design
 
 <Notes>
 Semantics/Readability
-Compression tools, such as SVGO, give you an option to compute all the basic shapes to path elements. It can save you a few bites but will definitely lower the readability of your code. <path /> syntax is extremely unintuitive, so if your SVG is ever about to be modified in a code editor rather than a design tool, it will be so much easier to understand it if you keep the basic shapes as basic shapes.
+Trzymanie podstawowych kształtów zamiast ścieżek wpływa ogromnie na czytelność pliku.
+Plik może zostać poddany optymalizacji jednak zawsze powinien gdzieś znajdować się plik źródłowy który może być pomocny przy edycji.
 
 File Size
-Compressing shapes to paths may help you minify files but it’s not always the case! For example, a rounded rectangle takes much more space as a <path /> than as a <rect />.
+Możemy zmniejszyć wage pliku w przypadku zamiany na krzywe jednak w niektórych przypadkach jest to nie opłacalne.
+
+Np w przypadku zaokrąglonych kwadratów lepiej jest użyć zaokrąglonego rect-a niż wygenerowanej ścieżki.
 
 Animations
-Have you ever tried to animate SVG? It’s a lot of fun — as long as you operate on clean, semantic SVG. With basic shapes, you can easily manipulate such parameters as radius, width, height or position of the point. If you merge your shapes into paths, most of those operations will be much harder to achieve or simply impossible.
+W przypdaku animacji poszczególnych kształtów dalej prościej jest operować na podstawowych kształtach zamiast na ścieżkach.
 
 Variants/Responsiveness
-Remember that SVG is not a static image such as JPG. You can style it, theme it, make it responsive, and so on. Same as with animations, keeping your file well-structured and semantic will definitely help you with any of those tasks.
+Dobrym pomysłem przy projektowaniu logotypów lub jakichś ilustracji zawerać w pliku wersje na róźne szerokości ekranu.
+
+To zdecydowanie wpływa na czytelność w przypadku mniejszych ekranów.
 </Notes>
 
 ---
