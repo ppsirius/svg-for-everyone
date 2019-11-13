@@ -56,6 +56,8 @@ import basicShape from './img/basic_shapes.png'
   Mimo różnic w nazewnictwie w niektórych progragmach i tak ostatecznie eksport odbywa sie do poprawnego pliku SVG.
 
   Chociaż w zależności od programu struktura kodu może wygladać inaczej w niektórych przypadkach.
+
+  Pytanie, czy kiedykolwiek sprawdziliście jak zostały wyeksportowane kształty?
 </Notes>
 
 ---
@@ -297,7 +299,18 @@ To zdecydowanie wpływa na czytelność w przypadku mniejszych ekranów.
    The centre of this coordinate system is placed in the top left corner of the designated area.
 
    ViewBox doesn’t determine SVG’s size. It just specifies the coordinates of the area in which our SVG is drawn.
+
+
 </CenterLayout>
+
+<a href="https://css-tricks.com/scale-svg" target="_blank">CSS Tricks</a>
+
+<Notes>
+  W skrócie to widoczny obszar w SVG-u z reguły najlepiej żeby dwie ostatnie cyfry miały wymiary elementu.
+
+  Po więcej szczegółów zapraszam pod link.
+</Notes>
+
 
 ---
 
@@ -325,6 +338,13 @@ To zdecydowanie wpływa na czytelność w przypadku mniejszych ekranów.
   In Illustrator, all assets have a viewBox, specified the same way as in Sketch and Figma, but no width and height applied.
 </CenterLayout>
 
+<Notes>
+  Jak widać większość programów przy eksporcie stosuje właśnie takie zachowanie.
+
+  Warto jednak wiedzieć czym jest tak na prawdę viewBox i w przypadku kiedy dostajemy svg nieznanego pochodzenia warto sprawdzić czy viewBox jest poprawny.
+  Gdyż czasami może on powodować dziwne zachowanie którego na pierwszy rzut oka nie będziemy w stanie zrozumieć.
+</Notes>
+
 ---
 
 
@@ -336,6 +356,12 @@ To zdecydowanie wpływa na czytelność w przypadku mniejszych ekranów.
    There’s no significant difference in how groups work across Illustrator, Sketch and Figma and, fortunately, the basic functionality of SVG groups is pretty much the same.
 </CenterLayout>
 
+<Notes>
+  Grupowanie jest bardzo przydatne na pracy przy złożonych elementach.
+
+  Łatwo możemy wtedy poruszać się w kodzie. Fajnie gdy podczas przygotowywania pliku grupy są odpowiednio ponazywane przez grafika.
+</Notes>
+
 ---
 
 ## COLOR FILL
@@ -345,6 +371,13 @@ To zdecydowanie wpływa na czytelność w przypadku mniejszych ekranów.
 
   Design tools export color fills with hex values (e.g. #0000ff), although, in SVG, you can also use all the other naming schemes known to CSS, such as color names (e.g. blue), RGB values (e.g. rgb(0,0,255)) or even HSL values (e.g. hsl(240,100%,50%)).
 </CenterLayout>
+
+<Notes>
+  Jest to atrybut elementu i jest to po prostu wypełnie elementu.
+
+  Oprócz hexa można podawać też rgb i hsl, defaultem jest hex.
+</Notes>
+
 
 ---
 
@@ -360,6 +393,11 @@ To zdecydowanie wpływa na czytelność w przypadku mniejszych ekranów.
   ```jsx
    <line stroke="black" stroke-dasharray="0 2" stroke-linecap="round"/>
   ```
+
+
+<Notes>
+  W przypdaku obrysu mamy dodatkowe atrybuty takie jak stroke-dasharray - przerywana linia, stoke-linecap - zakończenie lini
+</Notes>
 
 ---
 
@@ -377,6 +415,10 @@ To zdecydowanie wpływa na czytelność w przypadku mniejszych ekranów.
     <text x="20" y="50" font-family="Roboto">Text</text>
 
   ```
+
+<Notes>
+  Jest także element tekstu do którego możemy łatwo css-em zaimportować custom fonty
+</Notes>
 
 ---
 
@@ -397,6 +439,11 @@ To zdecydowanie wpływa na czytelność w przypadku mniejszych ekranów.
 
 </CenterLayout>
 
+
+<Notes>
+  Patrząc na możliwości transformacji elementów mamy bardzo podobne wartośći jak w css-ie
+</Notes>
+
 ---
 
 ## Transforms tip
@@ -408,6 +455,11 @@ To zdecydowanie wpływa na czytelność w przypadku mniejszych ekranów.
 
 </CenterLayout>
 
+
+<Notes>
+  Jednak nie mają one wszystkich możlwiości css-a. Np obracanie w svg jest tylko w 2D gdzie css posiada również opcje 3D.
+</Notes>
+
 ---
 
 <CenterLayout>
@@ -417,6 +469,11 @@ To zdecydowanie wpływa na czytelność w przypadku mniejszych ekranów.
   ```jsx
     <g transform="scale(3) rotate(90) translate(50,100)"> … </g>
   ```
+
+  <Notes>
+    Również zapis jest czasami inny więc warto sprawdzać syntax np na mdn gdzie mamy dokładną dokumentacje elementów svg i ich atrybutów.
+  </Notes>
+
 ---
 
 
@@ -436,13 +493,11 @@ To zdecydowanie wpływa na czytelność w przypadku mniejszych ekranów.
 
 </CenterLayout>
 
----
+<Notes>
+  Przeszliśmy przez podstawowe elementy i jeżeli one staną się dla Nas zrozumiałe. Po tym workshopie warto sięgnąć jednak po bardzej zaawansowane elementy.
 
-## Exercises time
-
-<Image style={{ width: "60%", height: "60%", backgroundSize: "contain"}} src="http://giphygifs.s3.amazonaws.com/media/5EJHDSPpFhbG0/giphy.gif" />
-
-<a href="https://codepen.io/ppsirius/pen/eYYLNaR" target="_blank">Link to exercise</a>
+  Filtry w svg-ach czy też opcje mieszania są bardzo rozległym tematem i na pewno niosą ze sobą fajne możliwości które mogą zaskoczyć nie jednego.
+</Notes>
 
 ---
 
@@ -453,6 +508,27 @@ To zdecydowanie wpływa na czytelność w przypadku mniejszych ekranów.
   <a href="https://www.supremo.co.uk/typeterms/" target="_blank">Typeterms</a><br/><br/>
   <a href="https://cuberto.com/" target="_blank">Cuberto</a>
 </CenterLayout>
+
+<Notes>
+  Te przykłady które pokaże na pewno pokazują, że dobra współpraca grafika z frontem może przynieść ogromne przełożenie na interfejs oraz odrzucia ożytkownika.
+
+  Tworzenie i animowanie svgów jest na pewno żmudnym i dość długim procesem. Patrząc jednak na pokazane przykłady warto chyba jednak skupić się na drobnych detalach które zmieniają ogólny odbiór.
+
+  Bardzo istotnym elementem podczas procesu jest własnie ta współpraca, do której bardzo zachęcam.
+
+  I oprócz zadanka które przygotowałem i za chwile Wam pokaże, pojawił się też pomysł na stworzenie animowanych ikonek pogodowych które moglibyśmy wrzucić na githuba w formie open-sourca na githuba.
+
+  Jak uważacie?
+</Notes>
+
+---
+
+
+## Exercises time
+
+<Image style={{ width: "60%", height: "60%", backgroundSize: "contain"}} src="http://giphygifs.s3.amazonaws.com/media/5EJHDSPpFhbG0/giphy.gif" />
+
+<a href="https://codepen.io/ppsirius/pen/eYYLNaR" target="_blank">Link to exercise</a>
 
 ---
 
@@ -471,6 +547,6 @@ Source:
 
 [Smashing Magazine](https://www.smashingmagazine.com/2019/05/svg-design-tools-practical-guide/)
 
-[Smashing](https://www.smashingmagazine.com/2014/11/styling-and-animating-svgs-with-css/)
+[Smashing Magazine](https://www.smashingmagazine.com/2014/11/styling-and-animating-svgs-with-css/)
 
 [MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/path)
