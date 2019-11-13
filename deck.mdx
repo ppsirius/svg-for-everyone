@@ -10,8 +10,10 @@ export const themes = [
 
 ## SVG for everyone
 
+import minions from './img/minions.webp'
+
 <Image
-  src="https://media.giphy.com/media/EOpZ7XsVfTN2E/giphy.gif"
+  src={minions}
   style={{ width: "43%", height: "50%", backgroundSize: "contain"}}
 />
 
@@ -71,8 +73,10 @@ import basicShape from './img/basic_shapes.png'
 ```
 </CenterLayout>
 
+import ellipse from './img/ellipse.png'
+
 <Image
-  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/33ecc52f-f367-4aea-ae7e-bc2add97f7a0/ellipse.png"
+  src={ellipse}
   style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
 />
 
@@ -85,8 +89,10 @@ import basicShape from './img/basic_shapes.png'
   <circle cx="400" cy="300" r="250"/>
 ```
 
+import circle from './img/circle.png'
+
 <Image
-  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/7d625ec0-fb0f-44a4-a3c6-e46d75d34f48/circle.png"
+  src={circle}
   style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
 />
 
@@ -98,8 +104,11 @@ import basicShape from './img/basic_shapes.png'
   <rect x="150" y="100" width="500" height="400"/>
 ```
 
+import rectangle from './img/rectangle.png'
+
+
 <Image
-  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/e1ab700c-646c-46f9-88cf-cc324f9bac91/rectangle.png"
+  src={rectangle}
   style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
 />
 
@@ -109,8 +118,10 @@ import basicShape from './img/basic_shapes.png'
   <rect x="150" y="100" width="500" height="400" rx="30"/>
 ```
 
+import roundedRectangle from './img/rounded-rectangle.png'
+
 <Image
-  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/56ce6b49-c90c-45a3-be0b-cfa8bc2e64b5/rounded-rectangle.png"
+  src={roundedRectangle}
   style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
 />
 
@@ -122,8 +133,10 @@ import basicShape from './img/basic_shapes.png'
   <rect x="150" y="100" width="500" height="400" rx="40" ry="30"/>
 ```
 
+import ellipticalCorner from './img/elliptical-corner.png'
+
 <Image
-  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/eb7fb547-6aa3-41e5-9d59-e4314927cccd/elliptical-corner.png"
+  src={ellipticalCorner}
   style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
 />
 
@@ -151,8 +164,10 @@ If you create a rectangle with multiple radii applied to its corners, the design
  <line x1="100" y1="100" x2="200" y2="200"/>
 ```
 
+import line from './img/line.png'
+
 <Image
-  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/c1a20727-8124-42c1-afba-f88c46b65d50/line.png"
+  src={line}
   style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
 />
 
@@ -194,8 +209,10 @@ If you create a rectangle with multiple radii applied to its corners, the design
  <polyline points="10,20 10,20 30,10 40,20" />
 ```
 
+import polyline from './img/polyline.png'
+
 <Image
-  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/cee72efa-5e41-4d84-a660-bc101b080472/polyline.png"
+  src={polyline}
   style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
 />
 
@@ -216,8 +233,10 @@ If you create a rectangle with multiple radii applied to its corners, the design
 
 ---
 
+import polygon from './img/polygon.png'
+
 <Image
-  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/62f2b220-4640-4c35-98be-42ccd9ea0c15/polygon.png"
+  src={polygon}
   style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
 />
 
@@ -322,8 +341,10 @@ To zdecydowanie wpływa na czytelność w przypadku mniejszych ekranów.
   On the contrary to viewBox, they should use specified units such as pixels, ems or rems.
 </CenterLayout>
 
+import viewboxWidthHeight from './img/viewbox-width-height.png'
+
 <Image
-  src="https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/2044e846-84b3-4f72-a1a5-55e788daeada/viewbox-width-height.png"
+  src={viewboxWidthHeight}
   style={{ width: "60%", height: "50%", backgroundSize: "contain"}}
 />
 
@@ -526,7 +547,9 @@ To zdecydowanie wpływa na czytelność w przypadku mniejszych ekranów.
 
 ## Exercises time
 
-<Image style={{ width: "60%", height: "60%", backgroundSize: "contain"}} src="http://giphygifs.s3.amazonaws.com/media/5EJHDSPpFhbG0/giphy.gif" />
+import dog from './img/dog.gif'
+
+<Image style={{ width: "60%", height: "60%", backgroundSize: "contain"}} src={dog} />
 
 <a href="https://codepen.io/ppsirius/pen/eYYLNaR" target="_blank">Link to exercise</a>
 
